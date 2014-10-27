@@ -22,7 +22,7 @@ class FizzBuzz():
 
     # Seems to give correct values. Tested with 1 and 2.
     def calc(self, i):
-        return i
+        return i + 1 - 1
 
 if __name__ == "__main__":
     app = FizzBuzz()
