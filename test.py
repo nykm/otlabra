@@ -4,6 +4,8 @@ from StringIO import StringIO
 
 from app import FizzBuzz
 
+# v1
+
 class TestSuite(unittest.TestCase):
 
     def test_one(self):
@@ -15,8 +17,18 @@ class TestSuite(unittest.TestCase):
 
         app = FizzBuzz()
         app.run(100, output)
+        
+        lines = output.getvalue().splitlines()
 
-        self.failIf(len(output.getvalue().splitlines()) != 100)
+        self.failIf(len(lines) != 100)
+
+        self.failIf(lines[0] != "1")
+        self.failIf(lines[1] != "2")
+        self.failIf(lines[2] != "Fizz")
+        self.failIf(lines[3] != "4")
+        self.failIf(lines[4] != "Buzz")
+        self.failIf(lines[14] != "FizzBuzz")
+        self.failIf(lines[44] != "FizzBuzz")
 
 def main():
     unittest.main()
