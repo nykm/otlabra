@@ -18,10 +18,10 @@ class FizzBuzz():
     # Run from 1 to "end". Maybe. Test fails for some reason
     def run(self, end, out=sys.stdout):
         for i in range(1, end + 1):
-            print >> out, self.calcv2(i)
+            print >> out, self.calc(i)
 
     # Seems to give correct values.
-    def calcv2(self, i):
+    def calc(self, i):
         isPrime = True
         for j in range(2, i):
             if i % j == 0:

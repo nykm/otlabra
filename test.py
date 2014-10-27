@@ -23,10 +23,10 @@ class TestSuite(unittest.TestCase):
         self.failIf(len(lines) != 100)
 
         self.failIf(lines[0] != "1")
-        self.failIf(lines[1] != "2")
-        self.failIf(lines[2] != "Fizz")
+        self.failIf(lines[1] != "<2> is a prime")
+        self.failIf(lines[2] != "<3> is a prime")
         self.failIf(lines[3] != "4")
-        self.failIf(lines[4] != "Buzz")
+        self.failIf(lines[4] != "<5> is a prime")
         self.failIf(lines[14] != "FizzBuzz")
         self.failIf(lines[44] != "FizzBuzz")
 
