@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import sys
 
-# Implementation of FizzBuzz v0.00
+# Implementation of FizzBuzz v2.00
 
 # Version 1: if number is divisible by 3, print Fizz
 #            if number is divisible by 5, print Buzz
@@ -18,10 +18,21 @@ class FizzBuzz():
     # Run from 1 to "end". Maybe. Test fails for some reason
     def run(self, end, out=sys.stdout):
         for i in range(1, end + 1):
-            print >> out, self.calc(i)
+            print >> out, self.calcv2(i)
 
     # Seems to give correct values.
-    def calc(self, i):
+    def calcv2(self, i):
+        isPrime = True
+        for j in range(2, i):
+            if i % j == 0:
+                isPrime = False
+                break
+        if isPrime and i > 1:
+            return "<%d> is a prime" % i
+        else:
+            return self.calcv1(i)
+     
+    def calcv1(self, i):
         imod3 = i % 3
         imod5 = i % 5
         if imod3 == 0 and imod5 == 0:
