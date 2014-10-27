@@ -20,9 +20,17 @@ class FizzBuzz():
         for i in range(1, end + 1):
             print >> out, self.calc(i)
 
-    # Seems to give correct values. Tested with 1 and 2.
+    # Seems to give correct values.
     def calc(self, i):
-        return i + 1 - 1
+        imod3 = i % 3
+        imod5 = i % 5
+        if imod3 == 0 and imod5 == 0:
+            return "FizzBuzz"
+        if imod3 == 0:
+            return "Fizz"
+        if imod5 == 0:
+            return "Buzz"
+        return i
 
 if __name__ == "__main__":
     app = FizzBuzz()
